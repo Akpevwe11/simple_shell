@@ -99,4 +99,28 @@ void free_info(info_t *info, int all);
 char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 
+
+/* Auxiliar Prototypes */
+int _putchar(char c);
+int _strlen(char *s);
+int _strtoken(char **tokens);
+int _strcmp(char *s1, char *s2);
+char *_strcat(char *dest, char *src);
+char *_strcpy(char *dest, char *src);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void redireccion(info_t *info);
+void restore_std_in_out(info_t *info);
+
+/* PATH */
+void find_cmd(info_t *info);
+char *find_path(info_t *info, char *pathstr, char *cmd);
+char *starts_with(const char *string, const char *findstr);
+int is_cmd(info_t *info, char *path);
+char *dup_chars(char *pathstr, int start, int stop);
+
+/* Environ */
+extern char **environ;
+int _unsetenv(info_t *info, char **tokens);
+int _setenv(info_t *info, char **tokens);
+
 #endif
