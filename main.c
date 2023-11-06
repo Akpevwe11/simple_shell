@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			write(STDIN_FILENO, "$ ", 2);
+			write(STDIN_FILENO, "($) ", 4);
 			line = reading();
 		}
 		identifydelim(info, line);
