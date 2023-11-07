@@ -1,46 +1,40 @@
 #include "shell.h"
 /**
- * main -This function serves as the main entry point for the program
- * @argc: The count of command - command line arguments.
- * @argv: an array of strings containing commandline arguments.
- * Return: Integer representing the exit status of the program - 0: the program executed successfully
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
+ *
+ * Return: 0 on success, 1 on error
  */
-int main(int argc, char *argv[])
+int main(int ac, char *av[])
 {
-	char *line = NULL;
-	char **lines = NULL;
-	info_t info[] = {INFO_INIT};
-	int flaqread = 0;
+	info_t info[] = { INFO_INIT };
+	int fd = 2;
 
-	info->fname = argv[0];
-	if (argc == 2)
+	/*fd = fd + 3;*/
+
+	if (ac == 2)
 	{
-		info->readfd = open_file(info, argv[1], 0);
-		if (info->readfd == -1)
-			exit(info->err_num);
-		else
-			flaqread = 1;
-	}
-	signal(SIGINT, sigint_handler);
-	while (info->condition)
-	{
-		if (flaqread == 1)
+		fd = open(av[1], O_RDONLY);
+		if (fd == -1)
 		{
-			line = __getline(info->readfd);
-			if (!line)
-				break;
+			if (errno == EACCES)
+				exit(126);
+			if (errno == ENOENT)
+			{
+				_eputs(av[0]);
+				_eputs(": 0: Can't open ");
+				_eputs(av[1]);
+				_eputchar('\n');
+				_eputchar(BUF_FLUSH);
+				exit(127);
+			}
+			return (EXIT_FAILURE);
 		}
-		else
-		{
-			write(STDIN_FILENO, "($) ", 4);
-			line = reading();
-		}
-		identifydelim(info, line);
-		lines = cutting(line);
-		checkone(info, lines);
-		restore_std_in_out(info);
-		free(line);
-		free(lines);
+		info->readfd = fd;
 	}
+	populate_env_list(info);
+	read_history(info);
+	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
