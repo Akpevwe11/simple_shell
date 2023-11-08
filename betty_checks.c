@@ -5,6 +5,6 @@
 
 int main()
 {
-  write(1,"Hello World!", 12);
+  write(1,"Hi,I am Charlotte!", 18);
   return 0;
 }
