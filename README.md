@@ -45,3 +45,5 @@ You don’t have to handle any argument to the built-in exit
 Simple shell 0.4 +
 
 Implement the env built-in, that prints the current environment
+
+QUESTIONS FOR EACH TASK
