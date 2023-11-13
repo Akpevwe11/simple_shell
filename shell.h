@@ -232,16 +232,4 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 
-
-/* toem_help.c */ 
-void aux_help(void);
-void aux_help_alias(void);
-void aux_help_cd(void);
-void aux_help_env(void);
-void aux_help_setenv(void);
-void aux_help_unsetenv(void);
-void aux_help_general(void);
-void aux_help_exit(void);
-
-
 #endif
