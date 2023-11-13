@@ -21,9 +21,8 @@ char *reading(void)
 	size_t buff_size = 0;
 	ssize_t bytes_read = 0; 
 
-	container = getline(&line, &buff_size, stdin);
+	bytes_read = getline(&line, &buff_size, stdin);
 	if(bytes_read == -1)
-		free(line);
-		exit(0);
+		free(line),exit(0);
 	return (line);
 }
