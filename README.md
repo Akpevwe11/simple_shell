@@ -9,3 +9,8 @@ Clone repository:
 ```sh
 $git clone https://github.com/Akpevwe11/simple_shell.git
 ```
+
+Compile:
+````sh
+
+``` 
