@@ -16,7 +16,7 @@ Charlotte Wellington
 
 Praise Essi Akpevwe
 
-#hsh usage
+hsh usage
 --------------------------------------------------------------------------------------------------------------------------------------
  - Displays a prompt and wait for the user to type a command. A command line always ends with a new line.
  - The prompt is displayed again each time a command has been executed.
