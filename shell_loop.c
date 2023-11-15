@@ -9,17 +9,17 @@
  */
 int hsh(info_t *info, char **av)
 {
-	ssize_t input_result = 0;
+	ssize_t r = 0;
 	int builtin_ret = 0;
 
-	while (input_result != -1 && builtin_ret != -2)
+	while (r != -1 && builtin_ret != -2)
 	{
 		clear_info(info);
 		if (interactive(info))
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
-		input_result = get_input(info);
-		if (input_result != -1)
+		r = get_input(info);
+		if (r != -1)
 		{
 			set_info(info, av);
 			builtin_ret = find_builtin(info);
