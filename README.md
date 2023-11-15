@@ -12,8 +12,11 @@ $git clone https://github.com/Akpevwe11/simple_shell.git
 
 Compile:
 ````sh
-
+gcc -o 
 ``` 
 
-##Authors
+Authors
 --------------------------------------------------------------------------------------------------------------------------------------
+Charlotte Wellington
+
+Praise Essi Akpevwe
