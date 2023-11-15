@@ -6,4 +6,4 @@ Download and Run Instructions
 --------------------------------------------------------------------------------------------------------------------------------------
 Clone repository:
 
-## $git clone https://github.com/Akpevwe11/simple_shell.git
+$git clone https://github.com/Akpevwe11/simple_shell.git
